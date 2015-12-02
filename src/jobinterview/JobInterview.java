@@ -28,6 +28,10 @@ public class JobInterview {
         //SumLists
         SumLists sumLists = new SumLists();
         sumLists.runTests();
+        
+        //Add without Plus
+        AddWithoutPlus addWithoutPlus = new AddWithoutPlus();
+        addWithoutPlus.runTests();
     }
     
 }
