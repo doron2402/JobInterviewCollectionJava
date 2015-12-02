@@ -4,7 +4,7 @@ import java.io.*;
 
 /**
  *
- * @author dsegal
+ * @author Doron2402
  * URLify - switch spaces to `%20`
  */
 public class URLify {

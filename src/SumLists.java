@@ -11,37 +11,42 @@ public class SumLists {
         Node next;
         int val;
         public Node(int val) {
-          this.val = val;
-            System.out.println(val);
+            this.val = val;
         }
         
         @Override
         public String toString() {
-          StringBuilder sb = new StringBuilder();
-          Node temp = this;
-          while (temp != null) {
-            sb.append(temp.val);
-            sb.append(' ');
-            temp = temp.next;
-          }
-          return sb.toString();
+            StringBuilder sb = new StringBuilder();
+            Node temp = this;
+            while (temp != null) {
+              sb.append(temp.val);
+              sb.append(' ');
+              temp = temp.next;
+            }
+            return sb.toString();
         }
     }
 
     public static Node nodeSum(Node a, Node b, int carry) {
-        if (a == null && b == null && carry == 0)
-          return null;
 
+        if (a == null && b == null && carry == 0){
+            return null;
+        }
+          
         int value = carry;
-        if (a != null)
+        if (a != null){
           value += a.val;
-        if (b != null)
-          value += b.val;
+        }
+        if (b != null) {            
+            value += b.val;
+        }
+          
         Node result = new Node(value % 10);
         if (a != null || b != null) {
             Node next = nodeSum(a == null ? null : a.next,b == null ? null : b.next,value / 10);
             result.next = next;
         }
+        
         return result;
     }
 
@@ -57,7 +62,6 @@ public class SumLists {
         Node f = new Node(2);
         d.next = e;
         e.next = f;
-
         Node x = nodeSum(a, d, 0);
         System.out.println(x);
     }    
